@@ -1,6 +1,8 @@
 require 'time'
 
-def time()
-    t = Time.now
-    return t.strftime('%Y-%m-%d %H:%M:%S')
+class Time
+    def self.getTime
+        t = Time.now
+        return t.strftime('%Y-%m-%d %H:%M:%S')
+    end
 end
