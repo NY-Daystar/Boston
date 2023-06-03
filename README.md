@@ -1,6 +1,6 @@
 # Boston
 
-[![Boston-CI](https://github.com/NY-Daystar/boston/actions/workflows/dotnet.yml/badge.svg)](https://github.com/NY-Daystar/boston/actions/workflows/dotnet.yml)
+[![Boston-CI](https://github.com/NY-Daystar/boston/actions/workflows/ruby.yml/badge.svg)](https://github.com/NY-Daystar/boston/actions/workflows/ruby.yml)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Version](https://img.shields.io/github/tag/NY-Daystar/boston.svg)](https://github.com/NY-Daystar/boston/releases)
 [![Total views](https://img.shields.io/sourcegraph/rrc/github.com/NY-Daystar/boston.svg)](https://sourcegraph.com/github.com/NY-Daystar/boston)
