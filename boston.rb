@@ -1,6 +1,8 @@
 require 'net/http'
 require 'json'
 
+require_relative 'fetcher'
+
 # TODO a installer
     # gem install net-http
     # gem install json
@@ -31,28 +33,11 @@ def run()
     coins = ["bitcoin", "ethereum"]
     puts "#{coins}"
     
-    prices = fetch_prices(coins)
-    puts prices
+    Fetcher.FetchPrices(coins)
+    puts Fetcher.AccessPrices
 
-    puts "prix du bitcoin eur : #{get_price(prices, "bitcoin", "eur")}"
-    puts "prix du eth en usd : #{get_price(prices, "ethereum", "usd")}"
-end
-
-def fetch_prices(coin_ids)
-    coins = coin_ids.join(",")
-    currencies = CURRENCIES.join(",")
-    url = "https://api.coingecko.com/api/v3/simple/price?ids=#{coins}&vs_currencies=#{currencies}"
-    uri = URI(url)
-    puts "URL: #{url}"
-    response = Net::HTTP.get(uri)
-    data = JSON.parse(response)
-    return data
-end
-
-def get_price(prices, coin, currency)
-
-    ## TODO verifier qque prices est non null
-    return prices[coin][currency]
+    puts "prix du bitcoin eur : #{Fetcher.GetPrice("bitcoin", "eur")}"
+    puts "prix du eth en usd : #{Fetcher.GetPrice("ethereum", "usd")}"
 end
 
 main()
