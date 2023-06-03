@@ -1,0 +1,52 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    date (3.3.3)
+    diff-lcs (1.5.0)
+    ipaddr (1.2.5)
+    json (2.6.3)
+    mail (2.8.1)
+      mini_mime (>= 0.1.1)
+      net-imap
+      net-pop
+      net-smtp
+    mini_mime (1.1.2)
+    minitest (5.14.4)
+    net-imap (0.3.4)
+      date
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
+    net-protocol (0.2.1)
+      timeout
+    net-smtp (0.3.3)
+      net-protocol
+    openssl (2.2.3)
+      ipaddr
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.5)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.0)
+    timeout (0.3.2)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  json (~> 2.6.3)
+  mail (~> 2.8.1)
+  minitest (~> 5.14.2)
+  openssl (~> 2.2.0)
+  rspec (~> 3.12.0)
+
+BUNDLED WITH
+   2.2.3
