@@ -1,31 +1,21 @@
-
 require 'openssl'
-require_relative 'log'
-
-# TODO test unitaires
+require_relative 'util/__init__'
 
 # Handle encoding of password
 class Cypher
-
-    attr_accessor :key
-    attr_accessor :hash
-    attr_accessor :iv
-    attr_accessor :secret
+    attr_accessor :key, :hash, :iv, :secret
       
-    # TODO english
-    # Initialise la classe Cypher avec une clé et un vecteur d'initialisation
-    #
-    # @param key [String] la clé de chiffrement
-    # @param iv [String] le vecteur d'initialisation
+    # Initialize Cypher class with a key annd an init vector
+    # @param key [String] cypher key
+    # @param iv [String] init vector
     def initialize(key = nil, iv = nil)
-        @key = key unless @key = "\x01\x23\x45\x67\x89\xAB\xCD\xEF\x01\x23\x45\x67\x89\xAB\xCD\xEF\x01\x23\x45\x67\x89\xAB\xCD\xEF\x01\x23\x45\x67\x89\xAB\xCD\xEF"
-        @iv = iv unless @iv = 'my_iv_9876543210'
+        @key = key || "\x01\x23\x45\x67\x89\xAB\xCD\xEF\x01\x23\x45\x67\x89\xAB\xCD\xEF\x01\x23\x45\x67\x89\xAB\xCD\xEF\x01\x23\x45\x67\x89\xAB\xCD\xEF"
+        @iv = iv || 'my_iv_9876543210'
     end
       
-    # Encode le texte donné en utilisant l'algorithme AES-256-CBC
-    #
-    # @param plaintext [String] le texte à chiffrer
-    # @return [String] le texte chiffré
+    # Encoding text with `AES-256-CBC` algorithm
+    # @param plaintext [String] text to cypher
+    # @return [String] cyphered text
     def Encode(plaintext)
         cipher = OpenSSL::Cipher.new('AES-256-CBC')
         cipher.encrypt
@@ -35,10 +25,9 @@ class Cypher
         @hash = encrypted.unpack('H*').first
     end
     
-    # Décode le texte chiffré donné en utilisant l'algorithme AES-256-CBC
-    #
-    # @param ciphertext [String] le texte chiffré
-    # @return [String] le texte déchiffré
+    # Decoding cyphered text using `AES-256-CBC` algorithms
+    # @param ciphertext [String] cyphered text
+    # @return [String] plaintext
     def Decode(ciphertext)
         cipher = OpenSSL::Cipher.new('AES-256-CBC')
         cipher.decrypt
@@ -48,8 +37,6 @@ class Cypher
         @secret = decrypted.force_encoding('UTF-8')
     end
 
-    # TODO english
-    # TODO a tester
     # Verify key with SHA-256
     # @return [Boolean] true if key matches hash, otherwise false
     def Verify()
@@ -59,12 +46,10 @@ class Cypher
 
     # Class method
     def self.Check()
-        puts "Valid method"
+        p "Valid method"
     end
 end
 
-## TODO mettre un argument
-## TODO readme arguument pour lancer l'encodagte
 if __FILE__ == $0
     if ARGV.count < 1 
         puts "Please put your secret like this : \n"+"$ ruby Cypher.rb <SECRET>".yellow
@@ -72,5 +57,5 @@ if __FILE__ == $0
     end
 
     encoded = Cypher.new().Encode(ARGV[0])
-    puts "Your secret encoding is: ", encoded.yellow
+    puts "Your secret encoding is: #{encoded.yellow}"
 end

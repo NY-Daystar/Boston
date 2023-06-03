@@ -1,22 +1,19 @@
 require 'net/http'
 require 'json'
 
+require_relative 'util/__init__'
 require_relative 'fetcher'
 
-# TODO a installer
-    # gem install net-http
-    # gem install json
-## TODO  voir  pour  les  commentaires des meethodes
-## TODO mettre uun logger avec un fichier et le temps
-# TODO README, LICENCE, CHANGELOOG
-PROJECT =  "PROJECT_NAME"
+# TODO put logger with file output and time
+
+PROJECT =  "Boston"
 VERSION = "1.0.0"
 
 CURRENCIES = ["usd", "eur"]
 
 def main()
-    puts "PROJECT : #{PROJECT}" ## TODO faire une methode log avec une geestioon de couleur + dans un fichier util.rbs
-    puts "VERSION : #{VERSION}"
+    puts "PROJECT : #{PROJECT.yellow}"
+    puts "VERSION : #{VERSION.yellow}"
     
     timer = 10
     

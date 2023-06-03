@@ -57,14 +57,20 @@ git clone git@github.com:NY-Daystar/Boston.git
 cd Boston
 ```
 
-3. Install dependencies
+3. Setup and launch project
+
+```
+make
+```
+
+4. If you want to re-install dependencies
 
 ```bash
 bundle install
 
 ```
 
-4. Launch project
+5. To launch project
 
 ```bash
 ruby boston.rb
