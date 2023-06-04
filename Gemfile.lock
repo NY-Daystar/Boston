@@ -37,8 +37,10 @@ GEM
       rspec-support (~> 3.12.0)
     rspec-support (3.12.0)
     timeout (0.3.2)
+    yaml (0.2.1)
 
 PLATFORMS
+  x86-mingw32
   x86_64-linux
 
 DEPENDENCIES
@@ -47,6 +49,7 @@ DEPENDENCIES
   minitest (~> 5.14.2)
   openssl (~> 2.2.0)
   rspec (~> 3.12.0)
+  yaml (~> 0.2.1)
 
 BUNDLED WITH
-   2.2.3
+   2.4.10

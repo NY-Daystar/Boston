@@ -1,0 +1,4 @@
+AllCops:
+    IndentationWidth: 4
+  Include:
+    - "**/*.rb"

@@ -13,6 +13,10 @@ Ruby project to follow crypto-curreencies tends
 -   Set threshold for each currencies
 -   Notifying by email when threshold is reached
 
+# TODO setup le fichier config-sample
+
+# TODO ajouter l'option send-mail a true ou false
+
 ## Summary
 
 -   [Requirements](#requirements)
